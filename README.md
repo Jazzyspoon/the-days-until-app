@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Title:
+The Days Until – The Countdown Clock for Kids.
+MVP:
+
+1. Built as a PWA
+2. Short term development: React, using Google Firebase for Database & Storage, Serverless, Google Calendar API
+3. Long-Term: A production ready mobile version in React-Native using MongoDB/Express for the backend.
+   Objective:
+   My objective is to create a mobile-based application for kids that has a countdown clock for each Holiday and/or birthday. My kids are always asking “How many days until…?” and it would be convenient to have an app that does this privately (non-Google). The parents can sign the kids up using a simple log in where they can ‘optionally’ enter their birthday. After signing up, the main home screen shows a few responsive rows of boxes, each colored and decorated to represent individual Holidays. There is also an option to add a Holiday not listed or enter additional birthdays (for other family members or friends). Clicking on the box will take the user to a new page where a festive countdown clock is showing, with data being pulled from a Google Calendar API (ironically) and page stylings to represent each holiday. There will also be a form on each page to input personal notes or add a (wish) list that will be stored. I would hope to be able to add open-source seasonal music to optionally play in the background of each page, as well. The desired end result will be to have an working app to add to the google app store and/or IOS app store for sale.  
+   User Stories:
+4. As a new user, I want to be able to register and set up an account for my child.
+5. As an existing user, I want to be able to set up and change my home page layout and choices.
+6. As an existing user, I want to be able to click on an event or Holiday and be taken to that page.
+7. As an existing user, I want to be able to add and save notes or (wish)lists to each page.
+   Reason: Over the last few years, my kids have been googling, ‘How many days until….. <insert important date here>?’ as a Holiday approaches. Unfortunately, this can create privacy issues due to Google’s invasive tap on our browsing activities. So, I have decided to implement this mobile app in response, with privacy being of the utmost importance, but all the while designing a smart, playful interface that a child would enjoy. This will also help me continue to expand my web development skills. The focus here will lie on React in the beginning, and then React-Native mobile development in the long run, which both fits very well into my existing portfolio.
