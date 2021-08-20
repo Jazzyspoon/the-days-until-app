@@ -11,7 +11,8 @@ interface Props {
   width: string;
   margin: string;
   fontSize: string;
-  color: string,
+  color: string;
+  
   }
 
 const Button: React.FC<Props> = ({ 
@@ -25,7 +26,8 @@ const Button: React.FC<Props> = ({
     width, 
     margin,
     fontSize,
-    color
+    color,
+    
   }) => { 
   return (
     <button 
@@ -40,7 +42,8 @@ const Button: React.FC<Props> = ({
          margin,
          fontSize,
          color,
-      }}
+         
+          }}
     >
     {children}
     </button>
