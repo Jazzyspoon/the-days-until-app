@@ -1,8 +1,8 @@
 import React from "react";
+import Modal from "@material-ui/core/Modal";
+// import Modal from "../Modal";
 
-import Modal from "./Modal";
-
-const ModalOne = ({ closeFn = () => null, open = false }) => {
+const EasterModal = ({ closeFn = () => null, open = false }) => {
   return (
     <Modal open={open}>
       <div className="modal--mask">
@@ -24,4 +24,4 @@ const ModalOne = ({ closeFn = () => null, open = false }) => {
   );
 };
 
-export default ModalOne;
+export default EasterModal;

@@ -1,16 +1,16 @@
 import React from "react";
 
-import ModalOne from "./components/common/modal-one/ModalOne";
-import ModalTwo from "./components/common/modal-two/ModalTwo";
-import ModalThree from "./components/common/modal-three/ModalThree";
+import XmasModal from "./components/ChristmasModal/ChristmasModal";
+import NewYearsDayModal from "./components/NewYearsDayModal/NYDayModal";
+import EasterModal from "./components/EasterModal/EasterModal";
 
 const ModalManager = ({ closeFn = () => null, modal = "" }) => (
   <>
-    <ModalOne closeFn={closeFn} open={modal === "modal-one"} />
+    <NewYearsDayModal closeFn={closeFn} open={modal === "modal-one"} />
 
-    <ModalTwo closeFn={closeFn} open={modal === "modal-two"} />
+    <XmasModal closeFn={closeFn} open={modal === "modal-two"} />
 
-    <ModalThree closeFn={closeFn} open={modal === "modal-three"} />
+    <EasterModal closeFn={closeFn} open={modal === "modal-three"} />
   </>
 );
 
