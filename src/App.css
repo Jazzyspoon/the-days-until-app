@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,16 +28,13 @@
   color: #61dafb;
 }
 
-.modal {
+.paper {
   display: "flex";
   justify-content: "center";
-  align-items: center;
-}
-
-.paper {
-  background-color: bisque;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
   border: "2px solid #000";
-  box-shadow: #282c34;
+  color: black;
   padding: 10px;
 }
 

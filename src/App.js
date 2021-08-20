@@ -54,9 +54,9 @@ function MainPage() {
             backgroundColor="blue"
             fontSize="16px"
             borderColor="white"
-            borderWidth="1px"
+            borderWidth="10px"
             onClick={() => console.log("add a holiday")}
-            radius="15%"
+            radius="4%"
             children="add a holiday"
             margin="10px"
             color="white"
@@ -67,9 +67,9 @@ function MainPage() {
             backgroundColor="blue"
             fontSize="16px"
             borderColor="white"
-            borderWidth="1px"
+            borderWidth="10px"
             onClick={() => console.log("add a birthday!")}
-            radius="15%"
+            radius="4%"
             children="Add a Birthday"
             margin="10px"
             color="white"
@@ -100,7 +100,7 @@ function MainPage() {
               margin="10px"
             />
             <Modal
-              className="modal"
+              className="paper"
               aria-labelledby="spring-modal-title"
               aria-describedby="spring-modal-description"
               open={open}
