@@ -32,12 +32,18 @@ const renderer = ({ days, hours, minutes, seconds }) => {
 };
 
 function MainPage() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
+  const [open, setOpen1, setOpen2] = React.useState(false);
+  const handleOpen1 = () => {
+    setOpen1(true);
   };
-  const handleClose = () => {
-    setOpen(false);
+  const handleOpen2 = () => {
+    setOpen2(true);
+  };
+  const handleClose1 = () => {
+    setOpen1(false);
+  };
+  const handleClose2 = () => {
+    setOpen2(false);
   };
 
   return (
@@ -85,6 +91,7 @@ function MainPage() {
         <br></br>
         <h1>The Days Until...</h1>
         <div className="row">
+          {/* modal One */}
           <animated.div>
             <Button
               backgroundColor="blue"
@@ -93,7 +100,7 @@ function MainPage() {
               borderWidth="10px"
               color="white"
               height="100px"
-              onClick={handleOpen}
+              onClick={handleOpen1}
               radius="5%"
               width="300px"
               children="New Year's Day"
@@ -104,7 +111,7 @@ function MainPage() {
               aria-labelledby="spring-modal-title"
               aria-describedby="spring-modal-description"
               open={open}
-              onClose={handleClose}
+              onClose={handleClose1}
               closeAfterTransition
               BackdropProps={{
                 timeout: 500,
@@ -120,7 +127,9 @@ function MainPage() {
               </div>
             </Modal>
           </animated.div>
-          <div>
+
+          {/* Modal Two */}
+          <animated.div>
             <Button
               backgroundColor="red"
               fontSize="24px"
@@ -128,15 +137,27 @@ function MainPage() {
               borderWidth="10px"
               color="white"
               height="100px"
-              onClick={() => console.log("You clicked on Christmas!")}
+              onClick={handleOpen2}
               radius="5%"
               width="300px"
               children="Christmas"
               margin="10px"
             />
-            <Countdown date={"2021-12-25T01:00:00"} renderer={renderer} />
-            <h3>Until {HolidaysArray[1]}!!!</h3>
-          </div>
+            <Modal
+              className="paper"
+              aria-labelledby="spring-modal-title"
+              aria-describedby="spring-modal-description"
+              open={open}
+              onClose={handleClose2}
+              closeAfterTransition
+              BackdropProps={{
+                timeout: 500,
+              }}
+            >
+              <Countdown date={"2021-12-25T01:00:00"} renderer={renderer} />
+              <h3>Until {HolidaysArray[1]}!!!</h3>
+            </Modal>
+          </animated.div>
         </div>
 
         <div>
@@ -148,12 +169,12 @@ function MainPage() {
               borderWidth="10px"
               color="black"
               height="100px"
-              onClick={() => console.log("You clicked on Easter!")}
-              radius="5%"
+              onClick={() => console.log("You clicked on Easter")}
               width="300px"
               children="Easter"
               margin="10px"
             />
+
             <Countdown date={"2022-04-17T01:00:00"} renderer={renderer} />
             <h3>Until {HolidaysArray[2]}!!!</h3>
           </div>
