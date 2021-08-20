@@ -8,7 +8,6 @@ import {
   IconButton,
   Typography,
   Modal,
-  Backdrop,
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { animated } from "react-spring";
@@ -33,7 +32,7 @@ const renderer = ({ days, hours, minutes, seconds }) => {
 };
 
 function MainPage() {
-  const [open, setOpen] = this.state;
+  const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
@@ -46,7 +45,7 @@ function MainPage() {
       {/* NAVBAR */}
       <AppBar position="fixed">
         <Toolbar>
-          <IconButton edge="start" color="blue" aria-label="menu">
+          <IconButton edge="start" color="primary" aria-label="menu">
             <MenuIcon />
           </IconButton>
           <Typography variant="h6">The Days Until.....</Typography>
@@ -56,11 +55,9 @@ function MainPage() {
             fontSize="16px"
             borderColor="white"
             borderWidth="1px"
-            height="30px"
-            onClick={() => console.log("You clicked on New Years Day!")}
-            radius="5%"
-            width="150px"
-            children="New Year's Day"
+            onClick={() => console.log("add a holiday")}
+            radius="15%"
+            children="add a holiday"
             margin="10px"
             color="white"
           >
@@ -71,11 +68,9 @@ function MainPage() {
             fontSize="16px"
             borderColor="white"
             borderWidth="1px"
-            height="30px"
-            onClick={() => console.log("You clicked on New Years Day!")}
-            radius="5%"
-            width="150px"
-            children="New Year's Day"
+            onClick={() => console.log("add a birthday!")}
+            radius="15%"
+            children="Add a Birthday"
             margin="10px"
             color="white"
           >
@@ -105,12 +100,12 @@ function MainPage() {
               margin="10px"
             />
             <Modal
+              className="modal"
               aria-labelledby="spring-modal-title"
               aria-describedby="spring-modal-description"
               open={open}
               onClose={handleClose}
               closeAfterTransition
-              BackdropComponent={Backdrop}
               BackdropProps={{
                 timeout: 500,
               }}
