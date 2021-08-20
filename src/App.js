@@ -1,4 +1,5 @@
 import "./App.css";
+import React from "react";
 import Button from "./components/CustomButtonComponent";
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
             borderWidth="10px"
             color="white"
             height="100px"
-            onClick={() => console.log("You clicked on the pink circle!")}
-            radius="10%"
+            onClick={() => console.log("You clicked on New Years Day!")}
+            radius="5%"
             width="300px"
             children="New Year's Day"
             margin="10px"
@@ -27,8 +28,8 @@ function App() {
             borderWidth="10px"
             color="white"
             height="100px"
-            onClick={() => console.log("You clicked on the pink circle!")}
-            radius="10%"
+            onClick={() => console.log("You clicked on Christmas!")}
+            radius="5%"
             width="300px"
             children="Christmas"
             margin="10px"
@@ -43,8 +44,8 @@ function App() {
             borderWidth="10px"
             color="black"
             height="100px"
-            onClick={() => console.log("You clicked on the pink circle!")}
-            radius="10%"
+            onClick={() => console.log("You clicked on Easter!")}
+            radius="5%"
             width="300px"
             children="Easter"
             margin="10px"
@@ -52,12 +53,12 @@ function App() {
           <Button
             backgroundColor="darkorange"
             fontSize="24px"
-            borderColor="black"
+            borderColor="grey"
             borderWidth="10px"
             color="black"
             height="100px"
-            onClick={() => console.log("You clicked on the pink circle!")}
-            radius="10%"
+            onClick={() => console.log("You clicked on Halloween!")}
+            radius="5%"
             width="300px"
             children="Halloween"
             margin="10px"
@@ -72,8 +73,8 @@ function App() {
             borderWidth="10px"
             color="black"
             height="100px"
-            onClick={() => console.log("You clicked on the pink circle!")}
-            radius="10%"
+            onClick={() => console.log("You clicked on Thanksgiving!")}
+            radius="5%"
             width="300px"
             children="Thanksgiving"
             margin="10px"
@@ -82,12 +83,12 @@ function App() {
           <Button
             backgroundColor="lightblue"
             fontSize="24px"
-            borderColor="blue"
+            borderColor="teal"
             borderWidth="10px"
             color="black"
             height="100px"
-            onClick={() => console.log("You clicked on the pink circle!")}
-            radius="10%"
+            onClick={() => console.log("You clicked on New Years Eve!")}
+            radius="5%"
             width="300px"
             children="New Years Eve"
             margin="10px"
@@ -98,12 +99,12 @@ function App() {
           <Button
             backgroundColor="white"
             fontSize="24px"
-            borderColor="yellow"
+            borderColor="red"
             borderWidth="10px"
             color="black"
             height="100px"
-            onClick={() => console.log("You clicked on the pink circle!")}
-            radius="10%"
+            onClick={() => console.log("You clicked on Your Birthday!")}
+            radius="5%"
             width="300px"
             children="Your Birthday!"
             margin="10px"
@@ -116,8 +117,8 @@ function App() {
             borderWidth="10px"
             color="black"
             height="100px"
-            onClick={() => console.log("You clicked on the pink circle!")}
-            radius="10%"
+            onClick={() => console.log("You clicked on School's Out!")}
+            radius="5%"
             width="300px"
             children="School's Out!"
             margin="10px"

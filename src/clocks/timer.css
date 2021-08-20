@@ -1,0 +1,10 @@
+* {
+  background-color: aquamarine;
+  justify-content: center;
+  text-align: center;
+}
+
+.timer {
+  font-size: large;
+  font-weight: 600;
+}
