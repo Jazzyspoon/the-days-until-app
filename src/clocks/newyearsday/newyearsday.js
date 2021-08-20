@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Countdown from "react-countdown";
-import "./timer.css";
+import "./NYtimer.css";
 import "../App.css";
 
 // Random component
