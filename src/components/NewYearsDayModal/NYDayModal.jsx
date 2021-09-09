@@ -21,7 +21,7 @@ const NewYearsDayModal = ({ closeFn = () => null, open = false }) => {
           <div className="modal--body">
             <div>
               <Countdown
-                date={"2022-01-01T01:00:00"}
+                date={"yyyy-01-01T01:00:00"}
                 renderer={renderer}
                 data="New Year's Day"
               />

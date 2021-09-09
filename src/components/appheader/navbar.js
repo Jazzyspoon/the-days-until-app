@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { AppBar, Toolbar, IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import Button from "../Buttons/CustomButtonComponent";
+import Button from "../Buttons/CustomButtonComponent.tsx";
 const AppHeader = () => {
   return (
     <header className="app--header">

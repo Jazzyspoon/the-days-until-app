@@ -25,6 +25,12 @@ const renderer = ({ days, hours, minutes, seconds }) => {
     </div>
   );
 };
+function setYears() {
+  let now = new Date().getDate();
+  const currentYear = new Date().getFullYear();
+  if (now <= 0) return currentYear + 1;
+  else return currentYear;
+}
 
 function MainPage() {
   const [modalOpen, setModal] = useState(false);
@@ -73,27 +79,32 @@ function MainPage() {
                   children="New Year's Day"
                   margin="10px"
                 ></Button>
-              </div>
-              {/* Modal Two */}
-              <div>
-                <Button
-                  data-modal="modal-two"
-                  backgroundColor="red"
-                  fontSize="24px"
-                  borderColor="green"
-                  borderWidth="10px"
-                  color="white"
-                  height="100px"
-                  onClick={openModal}
-                  radius="5%"
-                  width="300px"
-                  children="Christmas"
-                  margin="10px"
+                <Countdown
+                  date={`${setYears} + "-01-01T01:00:00"`}
+                  renderer={renderer}
                 />
-
-                <Countdown date={"2021-12-25T01:00:00"} renderer={renderer} />
-                <h3>Until {HolidaysArray[1]}!!!</h3>
+                <h3>Until {HolidaysArray[0]}!!!</h3>
               </div>
+            </div>
+            {/* Modal Two */}
+            <div>
+              <Button
+                data-modal="modal-two"
+                backgroundColor="red"
+                fontSize="24px"
+                borderColor="green"
+                borderWidth="10px"
+                color="white"
+                height="100px"
+                onClick={openModal}
+                radius="5%"
+                width="300px"
+                children="Christmas"
+                margin="10px"
+              />
+
+              <Countdown date={"2021-12-25T01:00:00"} renderer={renderer} />
+              <h3>Until {HolidaysArray[1]}!!!</h3>
             </div>
 
             <div>
