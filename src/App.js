@@ -25,10 +25,12 @@ const renderer = ({ days, hours, minutes, seconds }) => {
     </div>
   );
 };
+
 function setYears() {
   let now = new Date().getDate();
-  const currentYear = new Date().getFullYear();
-  if (now <= 0) return currentYear + 1;
+  let past = new Date().setDate(0, 0, 0, 0, 0, 0);
+  let currentYear = new Date().getFullYear();
+  if (now > past) return currentYear + 1;
   else return currentYear;
 }
 
@@ -80,7 +82,7 @@ function MainPage() {
                   margin="10px"
                 ></Button>
                 <Countdown
-                  date={`${setYears} + "-01-01T01:00:00"`}
+                  date={setYears + "-01-01T01:00:00"}
                   renderer={renderer}
                 />
                 <h3>Until {HolidaysArray[0]}!!!</h3>
