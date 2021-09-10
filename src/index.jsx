@@ -4,7 +4,7 @@ import MainPage from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Container from "@material-ui/core/Container";
 import "./index.css";
-
+import "bootstrap/dist/css/bootstrap.css";
 class TheDaysUntilApp extends React.Component {
   render() {
     return (

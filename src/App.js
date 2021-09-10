@@ -1,11 +1,48 @@
 import "./App.css";
-import React, { useState } from "react";
-import Button from "./components/Buttons/CustomButtonComponent";
+import React from "react";
+import { Button } from "reactstrap";
 import Countdown from "react-countdown";
-
 import { BrowserRouter } from "react-router-dom";
-import ModalManager from "./ModalManager";
 import AppHeader from "./components/appheader/navbar";
+
+var axios = require("axios").default;
+
+var options = {
+  method: "GET",
+  url: "https://public-holiday.p.rapidapi.com/2021/US",
+  headers: {
+    "x-rapidapi-host": "public-holiday.p.rapidapi.com",
+    "x-rapidapi-key": "a3a4ad724dmshb86a40c33440528p171084jsnc8e6ad600e2a",
+  },
+};
+
+var options22 = {
+  method: "GET",
+  url: "https://public-holiday.p.rapidapi.com/2022/US",
+  headers: {
+    "x-rapidapi-host": "public-holiday.p.rapidapi.com",
+    "x-rapidapi-key": "a3a4ad724dmshb86a40c33440528p171084jsnc8e6ad600e2a",
+  },
+};
+//options for 2021
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+
+//calendar for 2022
+axios
+  .request(options22)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
 
 let HolidaysArray = [
   "New Year's Day",
@@ -25,206 +62,106 @@ const renderer = ({ days, hours, minutes, seconds }) => {
     </div>
   );
 };
+class MainPage extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <AppHeader></AppHeader>
+        <div className="App">
+          <main className="app--screen screen--one">
+            <header className="App-header">
+              <br></br>
+              <br></br>
 
-function setYears() {
-  let now = new Date().getDate();
-  let past = new Date().setDate(0, 0, 0, 0, 0, 0);
-  let currentYear = new Date().getFullYear();
-  if (now > past) return currentYear + 1;
-  else return currentYear;
-}
+              <h1>The Days Until...</h1>
+            </header>
 
-function MainPage() {
-  const [modalOpen, setModal] = useState(false);
-
-  const openModal = (event) => {
-    event.preventDefault();
-    const {
-      target: {
-        dataset: { modal },
-      },
-    } = event;
-    if (modal) setModal(modal);
-  };
-
-  const closeModal = () => {
-    setModal("");
-  };
-
-  return (
-    <BrowserRouter>
-      <AppHeader></AppHeader>
-      <div className="App">
-        {/* MAIN BODY */}
-        <main className="app--screen screen--one">
-          <header className="App-header">
-            <br></br>
-            <br></br>
-
-            <h1>The Days Until...</h1>
-            <div className="row">
-              <ModalManager closeFn={closeModal} modal={modalOpen} />
-              {/* modal One */}
-              <div>
+            <div className="timegrid">
+              <div className="buttonBox">
                 <Button
-                  type="button"
-                  data-modal="modal-one"
-                  backgroundColor="blue"
-                  fontSize="24px"
-                  borderColor="white"
-                  borderWidth="10px"
-                  color="white"
-                  onClick={openModal}
-                  height="100px"
-                  radius="5%"
-                  width="300px"
+                  onClick={() => console.log("You clicked on Halloween!")}
                   children="New Year's Day"
-                  margin="10px"
+                  type="btn btn-blue"
                 ></Button>
-                <Countdown
-                  date={setYears + "-01-01T01:00:00"}
-                  renderer={renderer}
-                />
+                <Countdown date={"2022-01-01T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[0]}!!!</h3>
               </div>
-            </div>
-            {/* Modal Two */}
-            <div>
-              <Button
-                data-modal="modal-two"
-                backgroundColor="red"
-                fontSize="24px"
-                borderColor="green"
-                borderWidth="10px"
-                color="white"
-                height="100px"
-                onClick={openModal}
-                radius="5%"
-                width="300px"
-                children="Christmas"
-                margin="10px"
-              />
 
-              <Countdown date={"2021-12-25T01:00:00"} renderer={renderer} />
-              <h3>Until {HolidaysArray[1]}!!!</h3>
-            </div>
-
-            <div>
-              <div>
+              {/* Modal Two */}
+              <div className="buttonBox">
                 <Button
-                  data-modal="modal-one"
-                  backgroundColor="pink"
-                  fontSize="24px"
-                  borderColor="yellow"
-                  borderWidth="10px"
-                  color="black"
-                  height="100px"
-                  onClick={openModal}
-                  width="300px"
+                  type="btn"
+                  onClick={() => console.log("You clicked on Halloween!")}
+                  children="Christmas"
+                />
+
+                <Countdown date={"2021-12-25T01:00:00"} renderer={renderer} />
+                <h3>Until {HolidaysArray[1]}!!!</h3>
+              </div>
+
+              <div className="buttonBox">
+                <Button
+                  type="btn"
+                  onClick={() => console.log("You clicked on Halloween!")}
                   children="Easter"
-                  margin="10px"
                 />
 
                 <Countdown date={"2022-04-17T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[2]}!!!</h3>
               </div>
-              <div>
+              <div className="buttonBox">
                 <Button
-                  backgroundColor="darkorange"
-                  fontSize="24px"
-                  borderColor="grey"
-                  borderWidth="10px"
-                  color="black"
-                  height="100px"
+                  type="btn"
                   onClick={() => console.log("You clicked on Halloween!")}
-                  radius="5%"
-                  width="300px"
                   children="Halloween"
-                  margin="10px"
                 />
                 <Countdown date={"2021-10-31T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[3]}!!!</h3>
               </div>
-            </div>
 
-            <div>
-              <div>
+              <div className="buttonBox">
                 <Button
-                  backgroundColor="darkorange"
-                  fontSize="24px"
-                  borderColor="white"
-                  borderWidth="10px"
-                  color="black"
-                  height="100px"
+                  type="btn"
                   onClick={() => console.log("You clicked on Thanksgiving!")}
-                  radius="5%"
-                  width="300px"
                   children="Thanksgiving"
-                  margin="10px"
                 />
                 <Countdown date={"2021-11-25T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[4]}!!!</h3>
               </div>
-              <div>
+              <div className="buttonBox">
                 <Button
-                  backgroundColor="lightblue"
-                  fontSize="24px"
-                  borderColor="teal"
-                  borderWidth="10px"
-                  color="black"
-                  height="100px"
+                  type="btn"
                   onClick={() => console.log("You clicked on New Years Eve!")}
-                  radius="5%"
-                  width="300px"
                   children="New Years Eve"
-                  margin="10px"
                 />
                 <Countdown date={"2021-12-31T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[5]}!!!</h3>
               </div>
-            </div>
 
-            <div>
-              <div>
+              <div className="buttonBox">
                 <Button
-                  backgroundColor="white"
-                  fontSize="24px"
-                  borderColor="red"
-                  borderWidth="10px"
-                  color="black"
-                  height="100px"
+                  type="btn"
                   onClick={() => console.log("You clicked on Your Birthday!")}
-                  radius="5%"
-                  width="300px"
                   children="Your Birthday!"
-                  margin="10px"
                 />
                 <Countdown date={"2022-07-21T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[6]}!!!</h3>
               </div>
-              <div>
+              <div className="buttonBox">
                 <Button
-                  backgroundColor="yellow"
-                  fontSize="24px"
-                  borderColor="black"
-                  borderWidth="10px"
-                  color="black"
-                  height="100px"
+                  type="btn"
                   onClick={() => console.log("You clicked on School's Out!")}
-                  radius="5%"
-                  width="300px"
                   children="School's Out!"
-                  margin="10px"
                 />
                 <Countdown date={"2022-05-16T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[7]}!!!</h3>
               </div>
             </div>
-          </header>
-        </main>
-      </div>
-    </BrowserRouter>
-  );
+          </main>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default MainPage;
