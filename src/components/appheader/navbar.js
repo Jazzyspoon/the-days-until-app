@@ -13,6 +13,7 @@ import {
   DropdownItem,
   NavbarText,
 } from "reactstrap";
+import "./navbar.css";
 
 const Example = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,14 +23,16 @@ const Example = (props) => {
   return (
     <div>
       <Navbar color="white" light expand="md">
-        <NavbarBrand href="/">The Days Until App</NavbarBrand>
+        <NavbarBrand href="/">
+          <h1>The Days Until App</h1>
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav className="mr-auto spacemaker">
             <NavbarText> </NavbarText>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Add...
+              <DropdownToggle>
+                <h5>Add...</h5>
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>A Birthday</DropdownItem>
@@ -39,7 +42,9 @@ const Example = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <NavLink href="#">Log Out</NavLink>
+              <NavLink href="#">
+                <h5>Log Out</h5>
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>

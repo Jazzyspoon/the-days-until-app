@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import MainPage from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Container from "@material-ui/core/Container";
+import { Container } from "reactstrap";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 class TheDaysUntilApp extends React.Component {

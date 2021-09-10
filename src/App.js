@@ -53,6 +53,7 @@ let HolidaysArray = [
   "New Year's Eve",
   "Your Birthday",
   "School's Out",
+  "4th of July",
 ];
 
 const renderer = ({ days, hours, minutes, seconds }) => {
@@ -70,9 +71,6 @@ class MainPage extends React.Component {
         <div className="App">
           <main className="app--screen screen--one">
             <header className="App-header">
-              <br></br>
-              <br></br>
-
               <h1>The Days Until...</h1>
             </header>
 
@@ -155,6 +153,15 @@ class MainPage extends React.Component {
                 />
                 <Countdown date={"2022-05-16T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[7]}!!!</h3>
+              </div>
+              <div className="buttonBox">
+                <Button
+                  type="btn"
+                  onClick={() => console.log("You clicked on 4th of July!")}
+                  children="4th of July!"
+                />
+                <Countdown date={"2022-07-04T01:00:00"} renderer={renderer} />
+                <h3>Until {HolidaysArray[8]}!!!</h3>
               </div>
             </div>
           </main>
