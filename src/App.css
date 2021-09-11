@@ -34,6 +34,7 @@
   margin: 20px;
   color: black;
   background-color: rgb(200, 249, 255);
+  box-shadow: 5px 5px 5px rgb(32, 32, 32);
 }
 
 .timegrid {
@@ -47,6 +48,14 @@
   background-color: black;
   border-radius: 25px;
 }
+.btn.btn-custom-lg,
+.btn.btn-custom-sm,
+.btn.btn-custom-xs {
+  border-radius: 50px;
+  border: black;
+  border-width: 1px;
+  box-shadow: 5px 5px 5px rgb(32, 32, 32);
+}
 
 .pinkbackground {
   background-color: rgb(250, 203, 211);
@@ -58,7 +67,7 @@
   background-color: lightgreen;
 }
 .orangebackground {
-  background-color: rgb(255, 196, 86);
+  background-color: rgb(255, 169, 8);
 }
 .yellowbackground {
   background-color: yellow;
@@ -68,4 +77,8 @@
 }
 .tealbackground {
   background-color: rgb(108, 255, 157);
+}
+
+.left {
+  margin-left: 15px;
 }

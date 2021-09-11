@@ -11,7 +11,6 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  NavbarText,
 } from "reactstrap";
 import "./navbar.css";
 
@@ -28,10 +27,9 @@ const Example = (props) => {
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto spacemaker">
-            <NavbarText> </NavbarText>
+          <Nav className="mr-auto spacemaker left">
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle className="addbutton">
+              <DropdownToggle className="btn btn-success btn-custom-lg">
                 <h5>Add...</h5>
               </DropdownToggle>
               <DropdownMenu right>
@@ -42,8 +40,8 @@ const Example = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <NavLink href="#">
-                <h5>Log Out</h5>
+              <NavLink href="#" className="left">
+                <h4>Log Out</h4>
               </NavLink>
             </NavItem>
           </Nav>

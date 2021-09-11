@@ -58,8 +58,10 @@ let HolidaysArray = [
 
 const renderer = ({ days, hours, minutes, seconds }) => {
   return (
-    <div className="timer container d-flex">
-      {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
+    <div className="timer container d-flex ">
+      <h6>
+        {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
+      </h6>
     </div>
   );
 };
@@ -79,8 +81,10 @@ class MainPage extends React.Component {
                 <Button
                   onClick={() => console.log("You clicked on New Years Day!")}
                   children="New Year's Day"
-                  type="btn"
+                  className="btn btn-success btn-lg btn-custom-lg"
                 ></Button>
+                <br />
+                <br />
                 <Countdown date={"2022-01-01T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[0]}!!!</h3>
               </div>
@@ -90,8 +94,10 @@ class MainPage extends React.Component {
                   type="btn"
                   onClick={() => console.log("You clicked on Christmas!")}
                   children="Christmas"
+                  className="btn btn-danger btn-lg btn-custom-lg"
                 />
-
+                <br />
+                <br />
                 <Countdown date={"2021-12-25T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[1]}!!!</h3>
               </div>
@@ -101,8 +107,10 @@ class MainPage extends React.Component {
                   type="btn"
                   onClick={() => console.log("You clicked on Easter!")}
                   children="Easter"
+                  className="btn btn-light btn-lg btn-custom-lg"
                 />
-
+                <br />
+                <br />
                 <Countdown date={"2022-04-17T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[2]}!!!</h3>
               </div>
@@ -111,7 +119,10 @@ class MainPage extends React.Component {
                   type="btn"
                   onClick={() => console.log("You clicked on Halloween!")}
                   children="Halloween"
+                  className="btn btn-warning btn-lg btn-custom-lg"
                 />
+                <br />
+                <br />
                 <Countdown date={"2021-10-31T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[3]}!!!</h3>
               </div>
@@ -121,7 +132,10 @@ class MainPage extends React.Component {
                   type="btn"
                   onClick={() => console.log("You clicked on Thanksgiving!")}
                   children="Thanksgiving"
+                  className="btn btn-dark btn-lg btn-custom-lg"
                 />
+                <br />
+                <br />
                 <Countdown date={"2021-11-25T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[4]}!!!</h3>
               </div>
@@ -130,7 +144,10 @@ class MainPage extends React.Component {
                   type="btn"
                   onClick={() => console.log("You clicked on New Years Eve!")}
                   children="New Years Eve"
+                  className="btn btn-danger btn-lg btn-custom-lg"
                 />
+                <br />
+                <br />
                 <Countdown date={"2021-12-31T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[5]}!!!</h3>
               </div>
@@ -140,7 +157,10 @@ class MainPage extends React.Component {
                   type="btn"
                   onClick={() => console.log("You clicked on Your Birthday!")}
                   children="Your Birthday!"
+                  className="btn btn-info btn-lg btn-custom-lg"
                 />
+                <br />
+                <br />
                 <Countdown date={"2022-07-21T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[6]}!!!</h3>
               </div>
@@ -149,7 +169,10 @@ class MainPage extends React.Component {
                   type="btn"
                   onClick={() => console.log("You clicked on School's Out!")}
                   children="School's Out!"
+                  className="btn btn-success btn-lg btn-custom-lg"
                 />
+                <br />
+                <br />
                 <Countdown date={"2022-05-16T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[7]}!!!</h3>
               </div>
@@ -158,7 +181,10 @@ class MainPage extends React.Component {
                   type="btn"
                   onClick={() => console.log("You clicked on 4th of July!")}
                   children="4th of July!"
+                  className="btn btn-danger btn-lg btn-custom-lg"
                 />
+                <br />
+                <br />
                 <Countdown date={"2022-07-04T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[8]}!!!</h3>
               </div>
