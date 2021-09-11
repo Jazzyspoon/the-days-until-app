@@ -24,11 +24,12 @@ var options22 = {
     "x-rapidapi-key": "a3a4ad724dmshb86a40c33440528p171084jsnc8e6ad600e2a",
   },
 };
+
 //options for 2021
 axios
   .request(options)
   .then(function (response) {
-    console.log(response.data);
+    // console.log(response.data);
   })
   .catch(function (error) {
     console.error(error);
@@ -38,7 +39,9 @@ axios
 axios
   .request(options22)
   .then(function (response) {
-    console.log(response.data);
+    // console.log(response.data);
+    let holidayList22 = [response.data];
+    console.log(holidayList22);
   })
   .catch(function (error) {
     console.error(error);
@@ -59,9 +62,7 @@ let HolidaysArray = [
 const renderer = ({ days, hours, minutes, seconds }) => {
   return (
     <div className="timer container d-flex ">
-      <h7>
-        {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
-      </h7>
+      {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
     </div>
   );
 };
