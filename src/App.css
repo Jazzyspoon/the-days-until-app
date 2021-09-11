@@ -33,6 +33,7 @@
   padding: 10px;
   margin: 20px;
   color: black;
+  background-color: rgb(200, 249, 255);
 }
 
 .timegrid {
@@ -43,5 +44,28 @@
 }
 
 .btn {
-  background-color: red;
+  background-color: black;
+  border-radius: 25px;
+}
+
+.pinkbackground {
+  background-color: rgb(250, 203, 211);
+}
+.redbackground {
+  background-color: rgb(255, 37, 37);
+}
+.greenbackground {
+  background-color: lightgreen;
+}
+.orangebackground {
+  background-color: rgb(255, 196, 86);
+}
+.yellowbackground {
+  background-color: yellow;
+}
+.bluebackground {
+  background-color: rgb(67, 67, 255);
+}
+.tealbackground {
+  background-color: rgb(108, 255, 157);
 }

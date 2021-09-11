@@ -31,12 +31,12 @@ const Example = (props) => {
           <Nav className="mr-auto spacemaker">
             <NavbarText> </NavbarText>
             <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle>
+              <DropdownToggle className="addbutton">
                 <h5>Add...</h5>
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>A Birthday</DropdownItem>
-                <DropdownItem>A Holiday</DropdownItem>
+                <DropdownItem>..a Birthday</DropdownItem>
+                <DropdownItem>..a Holiday</DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>Reset</DropdownItem>
               </DropdownMenu>

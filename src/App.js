@@ -69,7 +69,7 @@ class MainPage extends React.Component {
       <BrowserRouter>
         <AppHeader></AppHeader>
         <div className="App">
-          <main className="app--screen screen--one">
+          <main className="app--screen">
             <header className="App-header">
               <h1>The Days Until...</h1>
             </header>
@@ -77,19 +77,18 @@ class MainPage extends React.Component {
             <div className="timegrid">
               <div className="buttonBox">
                 <Button
-                  onClick={() => console.log("You clicked on Halloween!")}
+                  onClick={() => console.log("You clicked on New Years Day!")}
                   children="New Year's Day"
-                  type="btn btn-blue"
+                  type="btn"
                 ></Button>
                 <Countdown date={"2022-01-01T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[0]}!!!</h3>
               </div>
 
-              {/* Modal Two */}
-              <div className="buttonBox">
+              <div className="buttonBox greenbackground">
                 <Button
                   type="btn"
-                  onClick={() => console.log("You clicked on Halloween!")}
+                  onClick={() => console.log("You clicked on Christmas!")}
                   children="Christmas"
                 />
 
@@ -97,17 +96,17 @@ class MainPage extends React.Component {
                 <h3>Until {HolidaysArray[1]}!!!</h3>
               </div>
 
-              <div className="buttonBox">
+              <div className="buttonBox yellowbackground">
                 <Button
                   type="btn"
-                  onClick={() => console.log("You clicked on Halloween!")}
+                  onClick={() => console.log("You clicked on Easter!")}
                   children="Easter"
                 />
 
                 <Countdown date={"2022-04-17T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[2]}!!!</h3>
               </div>
-              <div className="buttonBox">
+              <div className="buttonBox orangebackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on Halloween!")}
@@ -117,7 +116,7 @@ class MainPage extends React.Component {
                 <h3>Until {HolidaysArray[3]}!!!</h3>
               </div>
 
-              <div className="buttonBox">
+              <div className="buttonBox yellowbackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on Thanksgiving!")}
@@ -126,7 +125,7 @@ class MainPage extends React.Component {
                 <Countdown date={"2021-11-25T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[4]}!!!</h3>
               </div>
-              <div className="buttonBox">
+              <div className="buttonBox bluebackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on New Years Eve!")}
@@ -136,7 +135,7 @@ class MainPage extends React.Component {
                 <h3>Until {HolidaysArray[5]}!!!</h3>
               </div>
 
-              <div className="buttonBox">
+              <div className="buttonBox redbackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on Your Birthday!")}
@@ -154,7 +153,7 @@ class MainPage extends React.Component {
                 <Countdown date={"2022-05-16T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[7]}!!!</h3>
               </div>
-              <div className="buttonBox">
+              <div className="buttonBox tealbackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on 4th of July!")}
