@@ -59,9 +59,9 @@ let HolidaysArray = [
 const renderer = ({ days, hours, minutes, seconds }) => {
   return (
     <div className="timer container d-flex ">
-      <h6>
+      <h7>
         {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
-      </h6>
+      </h7>
     </div>
   );
 };
