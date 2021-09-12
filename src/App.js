@@ -7,6 +7,7 @@ import AppHeader from "./components/appheader/navbar";
 
 var axios = require("axios").default;
 
+//axios 2021 API
 var options = {
   method: "GET",
   url: "https://public-holiday.p.rapidapi.com/2021/US",
@@ -15,7 +16,7 @@ var options = {
     "x-rapidapi-key": "a3a4ad724dmshb86a40c33440528p171084jsnc8e6ad600e2a",
   },
 };
-
+//axios 2022 API
 var options22 = {
   method: "GET",
   url: "https://public-holiday.p.rapidapi.com/2022/US",
@@ -29,7 +30,8 @@ var options22 = {
 axios
   .request(options)
   .then(function (response) {
-    // console.log(response.data);
+    let holidayList21 = [response.data];
+    console.log(holidayList21);
   })
   .catch(function (error) {
     console.error(error);
@@ -59,12 +61,16 @@ let HolidaysArray = [
   "4th of July",
 ];
 
+//using Countdown clocks
+let completed = <div>"It's here!!!!"</div>;
 const renderer = ({ days, hours, minutes, seconds }) => {
-  return (
-    <div className="timer container d-flex ">
-      {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
-    </div>
-  );
+  if (Date === new Date(0, 0, 0, 0)) return completed;
+  else
+    return (
+      <div className="timer container d-flex ">
+        {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
+      </div>
+    );
 };
 class MainPage extends React.Component {
   render() {
@@ -115,6 +121,7 @@ class MainPage extends React.Component {
                 <Countdown date={"2022-04-17T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[2]}!!!</h3>
               </div>
+
               <div className="buttonBox orangebackground">
                 <Button
                   type="btn"
@@ -140,6 +147,7 @@ class MainPage extends React.Component {
                 <Countdown date={"2021-11-25T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[4]}!!!</h3>
               </div>
+
               <div className="buttonBox bluebackground">
                 <Button
                   type="btn"
@@ -165,6 +173,7 @@ class MainPage extends React.Component {
                 <Countdown date={"2022-07-21T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[6]}!!!</h3>
               </div>
+
               <div className="buttonBox">
                 <Button
                   type="btn"
@@ -177,6 +186,7 @@ class MainPage extends React.Component {
                 <Countdown date={"2022-05-16T01:00:00"} renderer={renderer} />
                 <h3>Until {HolidaysArray[7]}!!!</h3>
               </div>
+
               <div className="buttonBox tealbackground">
                 <Button
                   type="btn"
