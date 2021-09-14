@@ -7,10 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
+  Button,
 } from "reactstrap";
 import "./navbar.css";
 
@@ -28,17 +25,10 @@ const Example = (props) => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto spacemaker left">
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle className="btn btn-success btn-custom-lg">
-                <h5>Add...</h5>
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>..a Birthday</DropdownItem>
-                <DropdownItem>..a Holiday</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+            <Button className="btn btn-success btn-custom-lg">
+              <a href="inputholiday">Add a Holiday</a>
+            </Button>
+
             <NavItem>
               <NavLink href="#" className="left">
                 <h4>Log Out</h4>
