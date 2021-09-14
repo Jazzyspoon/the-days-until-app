@@ -5,7 +5,8 @@ import Countdown from "react-countdown";
 import { BrowserRouter } from "react-router-dom";
 import AppHeader from "./components/appheader/Navbar";
 import InputField from "./components/inputField/InputField";
-
+import MockData21 from "./components/MockData21";
+import MockData22 from "./components/MockData22";
 var axios = require("axios").default;
 
 //axios 2021 API
@@ -26,15 +27,15 @@ var options22 = {
     "x-rapidapi-key": "a3a4ad724dmshb86a40c33440528p171084jsnc8e6ad600e2a",
   },
 };
-
+const holidays21 = [];
+const populateData = (data) => {
+  holidays21.push(data);
+};
 //options for 2021
 axios
   .request(options)
   .then(function (response) {
-    let holidayNames21 = [response.data.map().name];
-    let holidayDates21 = [response.data.map().date];
-    console.log(holidayNames21);
-    console.log(holidayDates21);
+    populateData(response.data);
   })
   .catch(function (error) {
     console.error(error);
@@ -44,63 +45,11 @@ axios
 axios
   .request(options22)
   .then(function (response) {
-    // console.log(response.data);
-    let holidayNames22 = [response.data.name];
-    console.log(holidayNames22);
+    populateData(response.data);
   })
   .catch(function (error) {
     console.error(error);
   });
-
-const [holidays] = [
-  {
-    nyd: {
-      id: 1,
-      name: "New Year's Day",
-      date: "2022-01-01T01:00:00",
-    },
-    xmas: {
-      id: 2,
-      name: "Christmas",
-      date: "2021-12-25T01:00:00",
-    },
-    east: {
-      id: 3,
-      name: "Easter",
-      date: "2022-04-17T01:00:00",
-    },
-    hall: {
-      id: 4,
-      name: "Halloween",
-      date: "2021-10-31T01:00:00",
-    },
-    tg: {
-      id: 5,
-      name: "Thanksgiving",
-      date: "2021-11-25T01:00:00",
-    },
-    nye: {
-      id: 6,
-      name: "New Year's Eve",
-      date: "2021-12-31T01:00:00",
-    },
-    bd: {
-      id: 7,
-      name: "Your Birthday",
-      date: "2022-07-21T01:00:00",
-    },
-    sch: {
-      id: 8,
-      name: "Last Day of School",
-      date: "2022-05-16T01:00:00",
-    },
-    fourth: {
-      id: 9,
-      name: "4th of July",
-      date: "2022-07-04T01:00:00",
-    },
-  },
-];
 
 //using Countdown clocks
 let completed = <div>"It's here!!!!"</div>;
@@ -128,125 +77,128 @@ class MainPage extends React.Component {
               <div className="buttonBox">
                 <Button
                   onClick={() => console.log("You clicked on New Years Day!")}
-                  children={holidays.nyd.name}
+                  children={MockData22[0].name}
                   className="btn btn-success btn-lg btn-custom-lg"
                 ></Button>
                 <br />
                 <br />
                 <Countdown
                   id={1}
-                  date={holidays.nyd.date}
+                  date={MockData22[0].date}
                   renderer={renderer}
                 />
-                <h3>Until {holidays.nyd.name}!!!</h3>
+                <h3>
+                  Until {MockData22[0].name}
+                  !!!
+                </h3>
               </div>
 
               <div className="buttonBox greenbackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on Christmas!")}
-                  children={holidays.xmas.name}
+                  children={MockData21[13].name}
                   className="btn btn-danger btn-lg btn-custom-lg"
                 />
                 <br />
                 <br />
                 <Countdown
                   id={2}
-                  date={holidays.xmas.date}
+                  date={MockData21[13].date}
                   renderer={renderer}
                 />
-                <h3>Until {holidays.xmas.name}!!!</h3>
+                <h3>Until {MockData21[13].name}!!!</h3>
               </div>
 
               <div className="buttonBox yellowbackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on Easter!")}
-                  children={holidays.east.name}
+                  children={MockData22[13].name}
                   className="btn btn-light btn-lg btn-custom-lg"
                 />
                 <br />
                 <br />
-                <Countdown date={holidays.east.date} renderer={renderer} />
-                <h3>Until {holidays.east.name}!!!</h3>
+                <Countdown date={MockData22[13].date} renderer={renderer} />
+                <h3>Until {MockData22[13].name}!!!</h3>
               </div>
 
               <div className="buttonBox orangebackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on Halloween!")}
-                  children={holidays.hall.name}
+                  children={MockData21[15].name}
                   className="btn btn-warning btn-lg btn-custom-lg"
                 />
                 <br />
                 <br />
-                <Countdown date={holidays.hall.date} renderer={renderer} />
-                <h3>Until {holidays.hall.name}!!!</h3>
+                <Countdown date={MockData21[15].date} renderer={renderer} />
+                <h3>Until {MockData21[15].name}!!!</h3>
               </div>
 
               <div className="buttonBox yellowbackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on Thanksgiving!")}
-                  children={holidays.tg.name}
+                  children={MockData21[12].name}
                   className="btn btn-dark btn-lg btn-custom-lg"
                 />
                 <br />
                 <br />
-                <Countdown date={holidays.tg.date} renderer={renderer} />
-                <h3>Until {holidays.tg.name}!!!</h3>
+                <Countdown date={MockData21[12].date} renderer={renderer} />
+                <h3>Until {MockData21[12].name}!!!</h3>
               </div>
 
               <div className="buttonBox bluebackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on New Years Eve!")}
-                  children={holidays.nye.name}
+                  children={MockData21[16].name}
                   className="btn btn-danger btn-lg btn-custom-lg"
                 />
                 <br />
                 <br />
-                <Countdown date={holidays.nye.date} renderer={renderer} />
-                <h3>Until {holidays.nye.name}!!!</h3>
+                <Countdown date={MockData21[16].date} renderer={renderer} />
+                <h3>Until {MockData21[16].name}!!!</h3>
               </div>
 
               <div className="buttonBox redbackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on Your Birthday!")}
-                  children={holidays.bd.name}
+                  children={MockData22[16].name}
                   className="btn btn-info btn-lg btn-custom-lg"
                 />
                 <br />
                 <br />
-                <Countdown date={holidays.bd.date} renderer={renderer} />
-                <h3>Until {holidays.bd.name}!!!</h3>
+                <Countdown date={MockData22[16].date} renderer={renderer} />
+                <h3>Until {MockData22[16].name}!!!</h3>
               </div>
 
               <div className="buttonBox">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on School's Out!")}
-                  children={holidays.sch.name}
+                  children={MockData22[17].name}
                   className="btn btn-success btn-lg btn-custom-lg"
                 />
                 <br />
                 <br />
-                <Countdown date={holidays.sch.date} renderer={renderer} />
-                <h3>Until {holidays.sch.name}!!!</h3>
+                <Countdown date={MockData22[17].date} renderer={renderer} />
+                <h3>Until {MockData22[17].name}!!!</h3>
               </div>
 
               <div className="buttonBox tealbackground">
                 <Button
                   type="btn"
                   onClick={() => console.log("You clicked on 4th of July!")}
-                  children={holidays.fourth.name}
+                  children={MockData22[7].name}
                   className="btn btn-danger btn-lg btn-custom-lg"
                 />
                 <br />
                 <br />
-                <Countdown date={holidays.fourth.date} renderer={renderer} />
-                <h3>Until {holidays.fourth.name}!!!</h3>
+                <Countdown date={MockData22[7].date} renderer={renderer} />
+                <h3>Until {MockData22[7].name}!!!</h3>
               </div>
               <InputField value="#inputfield" />
             </div>
