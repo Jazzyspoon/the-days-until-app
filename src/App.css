@@ -83,3 +83,6 @@
 .left {
   margin-left: 15px;
 }
+html {
+  scroll-behavior: smooth;
+}

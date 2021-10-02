@@ -26,7 +26,9 @@ const Example = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto spacemaker left">
             <Button className="btn btn-success btn-custom-lg">
-              <a href="inputholiday">Add a Holiday</a>
+              <a href="#inputfield" className="addAday__link">
+                Add a Holiday
+              </a>
             </Button>
 
             <NavItem>

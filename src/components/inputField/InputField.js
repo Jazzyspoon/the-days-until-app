@@ -31,6 +31,21 @@ const InputField = (props) => {
         <Button className="btn btn-custom-lg" type="submit" onClick={onClick}>
           Add It
         </Button>
+        <br></br>
+        <div className="form__checkfield">
+          <div className="form-check">
+            <Input
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            ></Input>
+
+            <label className="form-check-label" type="flexCheckDefault">
+              Set Reminder
+            </label>
+          </div>
+        </div>
       </Form>
     </div>
   );

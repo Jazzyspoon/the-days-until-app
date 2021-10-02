@@ -13,3 +13,9 @@
 .btn.btn-custom-xs {
   border-radius: 50px;
 }
+.addAday__link,
+.addAday__link:hover,
+.addAday__link:active {
+  text-decoration: none;
+  color: white;
+}
