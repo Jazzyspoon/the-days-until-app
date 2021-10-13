@@ -3,7 +3,8 @@ This is still a work in progress.  I am making this for my kids to use, so it's 
 
 
 Current view:
-<img src=""></img>
+
+<img src="https://github.com/Jazzyspoon/the-days-until-app/blob/master/src/components/images/daysuntil.png"></img>
 To get the app running after 'npm install' and npm update',
 run `npm start`
 
