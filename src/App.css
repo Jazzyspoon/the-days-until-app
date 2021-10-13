@@ -32,7 +32,7 @@
   border-radius: 25px;
   padding: 10px;
   margin: 20px;
-  color: black;
+
   background-color: rgb(200, 249, 255);
   box-shadow: 5px 5px 5px rgb(32, 32, 32);
 }
@@ -45,7 +45,6 @@
 }
 
 .btn {
-  background-color: black;
   border-radius: 25px;
 }
 
