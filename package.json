@@ -47,6 +47,6 @@
   },
   "devDependencies": {
     "@types/babel__core": "^7.1.16",
-    "@types/react": "^17.0.19"
+    "@types/react": "^17.0.30"
   }
 }
