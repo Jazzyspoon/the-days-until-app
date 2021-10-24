@@ -3,8 +3,8 @@ import React from "react";
 import { Button } from "reactstrap";
 import Countdown from "react-countdown";
 import { BrowserRouter } from "react-router-dom";
-import AppHeader from "./components/appheader/navbar.jsx";
-import InputField from "./components/inputField/InputField.jsx";
+import AppHeader from "./components/appheader/navbar.js";
+import InputField from "./components/inputField/InputField.js";
 import HoliData from "./components/Holidata";
 
 //using Countdown clocks

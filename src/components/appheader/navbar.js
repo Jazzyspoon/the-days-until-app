@@ -11,7 +11,7 @@ import {
 } from "reactstrap";
 import "./navbar.css";
 
-const Example = (props) => {
+const NavbarComponent = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -43,4 +43,4 @@ const Example = (props) => {
   );
 };
 
-export default Example;
+export default NavbarComponent;
