@@ -14,16 +14,22 @@ const InputField = (props) => {
         <div className="form-control">
           <Label>Date of your Holiday:</Label>
           <Input
+            type="date"
+            name="date"
+            id="date"
             // onChange={(e) => setDate(e.target.value)}
-            // type="text"
+
             placeholder="mm/dd/yyyy"
           ></Input>
         </div>
         <div className="form-control">
           <Label>Name of Holiday:</Label>
           <Input
-            // onChange={(e) => setHolidayName(e.target.value)}
             type="text"
+            name="name"
+            id="name"
+            // onChange={(e) => setHolidayName(e.target.value)}
+
             placeholder="Holiday"
           ></Input>
         </div>

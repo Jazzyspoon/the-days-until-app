@@ -174,12 +174,12 @@ const HoliData = [
     {
       id: 15,
       name: "Halloween",
-      date: "2021-10-31",
+      date: "2022-10-31",
     },
     {
       id: 16,
       name: "New Year's Eve",
-      date: "2021-12-31",
+      date: "2022-12-31",
     },
     {
       id: 17,

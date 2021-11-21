@@ -9,12 +9,12 @@ import HoliData from "./components/Holidata";
 
 //using Countdown clocks
 let completed = <div>"It's here!!!!"</div>;
-const renderer = ({ days, hours, minutes, seconds }) => {
-  if (Date === new Date(0, 0, 0, 0)) return completed;
+const renderer = ({ days, hours, minutes }) => {
+  if (Date === new Date(0, 0, 0)) return completed;
   else
     return (
       <div className="timer container d-flex ">
-        {days} Days {hours} Hours {minutes} Minutes {seconds} Seconds
+        Only {days} Days, {hours} Hours, and {minutes} Minutes
       </div>
     );
 };
@@ -30,7 +30,7 @@ class MainPage extends React.Component {
             </header>
 
             <div className="timegrid">
-              <div className="buttonBox">
+              <div className="buttonBox" alt="New years Day">
                 <Button
                   onClick={() =>
                     console.log(`You clicked on ${HoliData[1][0].name}!`)
@@ -51,7 +51,7 @@ class MainPage extends React.Component {
                 </h3>
               </div>
 
-              <div className="buttonBox greenbackground">
+              <div className="buttonBox greenbackground" alt="Christmas">
                 <Button
                   type="btn"
                   onClick={() =>
@@ -70,7 +70,7 @@ class MainPage extends React.Component {
                 <h3>Until {HoliData[0][13].name}!!!</h3>
               </div>
 
-              <div className="buttonBox yellowbackground">
+              <div className="buttonBox yellowbackground" alt="Easter">
                 <Button
                   type="btn"
                   onClick={() =>
@@ -85,7 +85,7 @@ class MainPage extends React.Component {
                 <h3>Until {HoliData[1][13].name}!!!</h3>
               </div>
 
-              <div className="buttonBox orangebackground">
+              <div className="buttonBox orangebackground" alt="Halloween">
                 <Button
                   type="btn"
                   onClick={() =>
@@ -96,11 +96,11 @@ class MainPage extends React.Component {
                 />
                 <br />
                 <br />
-                <Countdown date={HoliData[0][15].date} renderer={renderer} />
+                <Countdown date={HoliData[1][14].date} renderer={renderer} />
                 <h3>Until {HoliData[0][15].name}!!!</h3>
               </div>
 
-              <div className="buttonBox yellowbackground">
+              <div className="buttonBox yellowbackground" alt="Thanksgiving">
                 <Button
                   type="btn"
                   onClick={() =>
@@ -115,7 +115,7 @@ class MainPage extends React.Component {
                 <h3>Until {HoliData[0][12].name}!!!</h3>
               </div>
 
-              <div className="buttonBox bluebackground">
+              <div className="buttonBox bluebackground" alt="New Years Eve">
                 <Button
                   type="btn"
                   onClick={() =>
@@ -130,7 +130,7 @@ class MainPage extends React.Component {
                 <h3>Until {HoliData[0][16].name}!!!</h3>
               </div>
 
-              <div className="buttonBox redbackground">
+              <div className="buttonBox redbackground" alt="Your Birthday">
                 <Button
                   type="btn"
                   onClick={() =>
@@ -145,7 +145,7 @@ class MainPage extends React.Component {
                 <h3>Until {HoliData[1][16].name}!!!</h3>
               </div>
 
-              <div className="buttonBox">
+              <div className="buttonBox" alt="Last Day Of School">
                 <Button
                   type="btn"
                   onClick={() =>
@@ -160,7 +160,7 @@ class MainPage extends React.Component {
                 <h3>Until {HoliData[1][17].name}!!!</h3>
               </div>
 
-              <div className="buttonBox tealbackground">
+              <div className="buttonBox tealbackground" alt="4th of July">
                 <Button
                   type="btn"
                   onClick={() =>
