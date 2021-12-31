@@ -30,23 +30,24 @@ class MainPage extends React.Component {
             </header>
 
             <div className="timegrid">
+              {/* //new years day */}
               <div className="buttonBox" alt="New years Day">
                 <Button
                   onClick={() =>
-                    console.log(`You clicked on ${HoliData[1][0].name}!`)
+                    console.log(`You clicked on ${HoliData[2][0].name}!`)
                   }
-                  children={HoliData[1][0].name}
+                  children={HoliData[2][0].name}
                   className="btn btn-success btn-lg btn-custom-lg"
                 ></Button>
                 <br />
                 <br />
                 <Countdown
                   id={1}
-                  date={HoliData[1][0].date}
+                  date={HoliData[2][0].date}
                   renderer={renderer}
                 />
                 <h3>
-                  Until {HoliData[1][0].name}
+                  Until {HoliData[2][0].name}
                   !!!
                 </h3>
               </div>
@@ -55,19 +56,19 @@ class MainPage extends React.Component {
                 <Button
                   type="btn"
                   onClick={() =>
-                    console.log(`You clicked on ${HoliData[0][13].name}!`)
+                    console.log(`You clicked on ${HoliData[1][12].name}!`)
                   }
-                  children={HoliData[0][13].name}
+                  children={HoliData[1][12].name}
                   className="btn btn-danger btn-lg btn-custom-lg"
                 />
                 <br />
                 <br />
                 <Countdown
                   id={2}
-                  date={HoliData[0][13].date}
+                  date={HoliData[1][12].date}
                   renderer={renderer}
                 />
-                <h3>Until {HoliData[0][13].name}!!!</h3>
+                <h3>Until {HoliData[1][12].name}!!!</h3>
               </div>
 
               <div className="buttonBox yellowbackground" alt="Easter">
@@ -104,30 +105,30 @@ class MainPage extends React.Component {
                 <Button
                   type="btn"
                   onClick={() =>
-                    console.log(`You clicked on ${HoliData[0][12].name}!`)
+                    console.log(`You clicked on ${HoliData[1][11].name}!`)
                   }
-                  children={HoliData[0][12].name}
+                  children={HoliData[1][11].name}
                   className="btn btn-dark btn-lg btn-custom-lg"
                 />
                 <br />
                 <br />
-                <Countdown date={HoliData[0][12].date} renderer={renderer} />
-                <h3>Until {HoliData[0][12].name}!!!</h3>
+                <Countdown date={HoliData[1][11].date} renderer={renderer} />
+                <h3>Until {HoliData[1][11].name}!!!</h3>
               </div>
 
               <div className="buttonBox bluebackground" alt="New Years Eve">
                 <Button
                   type="btn"
                   onClick={() =>
-                    console.log(`You clicked on ${HoliData[0][16].name}!`)
+                    console.log(`You clicked on ${HoliData[1][15].name}!`)
                   }
-                  children={HoliData[0][16].name}
+                  children={HoliData[1][15].name}
                   className="btn btn-danger btn-lg btn-custom-lg"
                 />
                 <br />
                 <br />
-                <Countdown date={HoliData[0][16].date} renderer={renderer} />
-                <h3>Until {HoliData[0][16].name}!!!</h3>
+                <Countdown date={HoliData[1][15].date} renderer={renderer} />
+                <h3>Until {HoliData[1][15].name}!!!</h3>
               </div>
 
               <div className="buttonBox redbackground" alt="Your Birthday">
