@@ -19,11 +19,11 @@
 }
 
 .paper {
-  display: "flex";
-  justify-content: "center";
+  display: 'flex';
+  justify-content: 'center';
   text-align: center;
   background-color: rgb(255, 255, 255);
-  border: "2px solid #000";
+  border: '2px solid #000';
   color: black;
   padding: 10px;
 }
@@ -60,28 +60,6 @@
   border: black;
   border-width: 1px;
   box-shadow: 5px 5px 5px rgb(32, 32, 32);
-}
-
-.pinkbackground {
-  background-color: rgb(250, 203, 211);
-}
-.redbackground {
-  background-color: rgb(255, 37, 37);
-}
-.greenbackground {
-  background-color: lightgreen;
-}
-.orangebackground {
-  background-color: rgb(255, 169, 8);
-}
-.yellowbackground {
-  background-color: yellow;
-}
-.bluebackground {
-  background-color: rgb(67, 67, 255);
-}
-.tealbackground {
-  background-color: rgb(108, 255, 157);
 }
 
 .left {

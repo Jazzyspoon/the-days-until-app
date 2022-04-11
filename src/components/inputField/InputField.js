@@ -1,57 +1,39 @@
-import React from "react";
-// import PropTypes from "prop-types";
-import { Input, Form, Button, Label } from "reactstrap";
-import "./inputField.css";
+import React from 'react';
+import { Input, Form, Button, Label } from 'reactstrap';
+import HoliData from '../Holidata';
+import './inputField.css';
 
+//click the button and create a new holiday and add it to the HoliData array then add a new card to the page
 const onClick = () => {
-  console.log("click");
+  let newHoli = {
+    id: Math.random(1, 100),
+    date: document.getElementById('date').value,
+    name: document.getElementById('name').value,
+    description: document.getElementById('description').value,
+  };
+  HoliData.push(newHoli);
+  document.getElementById('date').value = '';
+  document.getElementById('name').value = '';
+  document.getElementById('description').value = '';
 };
+
 const InputField = (props) => {
   return (
-    <div className="fieldBox">
-      <Form className="add-form">
-        <h3>Add your Own Holiday!</h3>
-        <div className="form-control">
-          <Label>Date of your Holiday:</Label>
-          <Input
-            type="date"
-            name="date"
-            id="date"
-            // onChange={(e) => setDate(e.target.value)}
-
-            placeholder="mm/dd/yyyy"
-          ></Input>
-        </div>
-        <div className="form-control">
-          <Label>Name of Holiday:</Label>
-          <Input
-            type="text"
-            name="name"
-            id="name"
-            // onChange={(e) => setHolidayName(e.target.value)}
-
-            placeholder="Holiday"
-          ></Input>
-        </div>
-
-        <Button className="btn btn-custom-lg" type="submit" onClick={onClick}>
-          Add It
+    <div className='fieldBox'>
+      <Form>
+        <Label for='name'>New Holiday Name</Label>
+        <Input type='text' name='name' id='name' placeholder='Name' />
+        <Label for='date'>Date</Label>
+        <Input type='date' name='date' id='date' placeholder='Date' />
+        <Input
+          type='description'
+          name='description'
+          id='description'
+          placeholder='Description'
+        />
+        <Button className='btn' onClick={onClick}>
+          Add Holiday
         </Button>
-        <br></br>
-        <div className="form__checkfield">
-          <div className="form-check">
-            <Input
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            ></Input>
-
-            <label className="form-check-label" type="flexCheckDefault">
-              Set Reminder
-            </label>
-          </div>
-        </div>
       </Form>
     </div>
   );
