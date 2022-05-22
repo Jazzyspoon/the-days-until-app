@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "ansi-html-community": "^0.0.8",
+    "async": "^3.2.3",
     "axios": "^0.21.4",
     "bootstrap": "^5.1.1",
     "follow-redirects": "^1.14.9",
