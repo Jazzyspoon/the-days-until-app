@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import MainPage from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { Container } from "reactstrap";
-import "./index.css";
-import "bootstrap/dist/css/bootstrap.css";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import MainPage from './App';
+import reportWebVitals from './reportWebVitals';
+import { Container } from 'reactstrap';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
 class TheDaysUntilApp extends React.Component {
   render() {
     return (
@@ -14,9 +14,14 @@ class TheDaysUntilApp extends React.Component {
     );
   }
 }
-const container = document.getElementsByClassName("app-container")[0];
 
-ReactDOM.render(React.createElement(TheDaysUntilApp), container);
+const container = document.getElementById('app-container');
+const root = createRoot(container);
+root.render(<TheDaysUntilApp />);
+
+// const container = document.getElementsByClassName('app-container')[0];
+
+//ReactDOM.createRoot(React.createElement(TheDaysUntilApp), container);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
