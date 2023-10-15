@@ -257,7 +257,7 @@ const HoliData = [
     date: getJuneteenthDate(),
     name: 'Juneteenth',
     description:
-      'Juneteenth is a day to celebrate African American freedom from slavery',
+      '',
   },
   {
     id: 9,
@@ -282,14 +282,14 @@ const HoliData = [
     id: 13,
     date: getNextThanksgivingDate(),
     name: 'Thanksgiving Day',
-    description: 'Thanksgiving Day is a day to give thanks for all we have',
+    description: 'Thanksgiving Day is a day to give thanks for all we have. It is a time to be with family and friends. It is a time to eat a lot of food and drink a lot of eggnog. It is a time to be merry and jolly. It is a time to watch football and eat turkey. It is a time to watch the Macy\'s Thanksgiving Day Parade. It is a time to watch the Na
   },
   {
     id: 14,
     date: getNextChristmasDate(),
     name: 'Christmas Day',
     description:
-      'Christmas Day is a day to celebrate the birth of Jesus Christ',
+      'Christmas Day is a day to celebrate the birth of Jesus Christ. It is a time to be with family and friends. It is a time to give gifts and receive gifts. It is a time to eat a lot of food and drink a lot of eggnog. It is a time to be merry and jolly. It is a
   },
   {
     id: 15,
