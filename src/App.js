@@ -5,7 +5,6 @@ import AppHeader from './components/appheader/navbar.js';
 import InputField from './components/inputField/InputField.js';
 import HoliData from './components/Holidata';
 import DateCardComponent from './components/cardcomponent/date-card-component';
-import { TooltipComponent } from './components/hover/tooltip';
 
 class MainPage extends React.Component {
   constructor(props) {

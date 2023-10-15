@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Countdown from 'react-countdown';
-import { TooltipComponent } from '../hover/tooltip';
 
 const renderer = ({ days, hours, minutes }) => {
   return (
