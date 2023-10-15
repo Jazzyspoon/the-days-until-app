@@ -5,6 +5,7 @@ import AppHeader from './components/appheader/navbar.js';
 import InputField from './components/inputField/InputField.js';
 import HoliData from './components/Holidata';
 import DateCardComponent from './components/cardcomponent/date-card-component';
+import { TooltipComponent } from './components/hover/tooltip';
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class MainPage extends React.Component {
         <div className='App'>
           <main className='app--screen'>
             <header className='App-header'>
-              <h1>{this.state.currentYear}: The Days Left Until...</h1>
+              <h1>The Days Left Until...</h1>
             </header>
 
             <div className='timegrid'>
@@ -37,6 +38,7 @@ class MainPage extends React.Component {
                     id={holiday.id}
                     date={holiday.date}
                     name={holiday.name}
+                    description={holiday.description}
                   />
                 );
               })}

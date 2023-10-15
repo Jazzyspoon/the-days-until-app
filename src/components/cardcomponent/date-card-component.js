@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Countdown from 'react-countdown';
+import { TooltipComponent } from '../hover/tooltip';
 
 const renderer = ({ days, hours, minutes }) => {
   return (
     <div className='timer container d-flex '>
-      Only {days} Days, {hours} Hours, and {minutes} Minutes
+      Only {days} Days and {hours} Hours Until
     </div>
   );
 };
@@ -15,12 +16,14 @@ class DateCardComponent extends Component {
     this.state = {
       id: this.props.id,
       date: this.props.date,
+      description: this.props.description,
       name: this.props.name,
       isOpen: true,
       renderer: renderer,
       currentYear: new Date().getFullYear(),
     };
   }
+
   //each card gets it's own unique light color
   getColor() {
     let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
@@ -70,7 +73,8 @@ class DateCardComponent extends Component {
               renderer={this.state.renderer}
             />
           </div>
-          <h3 className='card-title'>Until {this.state.name}!!!</h3>
+          <h3 className='card-title'>{this.state.name}!!!</h3>
+          <div className='card-text'>{this.state.description}</div>
         </div>
       </div>
     );

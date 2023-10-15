@@ -3,18 +3,24 @@ import { Input, Form, Button, Label } from 'reactstrap';
 import HoliData from '../Holidata';
 import './inputField.css';
 
+const dateRender = (date) => {
+  // make the date output 'yyyy-mm-dd'
+  let year = date.getFullYear();
+  let month = date.getMonth() + 1;
+  let day = date.getDate();
+  return `${year}-${month}-${day}`;
+};
+
 //click the button and create a new holiday and add it to the HoliData array then add a new card to the page
 const onClick = () => {
+  debugger;
   let newHoli = {
-    id: Math.random(1, 100),
-    date: document.getElementById('date').value,
+    id: Math.round(Math.random(1, 100) * 1000),
+    date: dateRender(new Date(document.getElementById('date').value)),
     name: document.getElementById('name').value,
     description: document.getElementById('description').value,
   };
   HoliData.push(newHoli);
-  document.getElementById('date').value = '';
-  document.getElementById('name').value = '';
-  document.getElementById('description').value = '';
 };
 
 const InputField = (props) => {
