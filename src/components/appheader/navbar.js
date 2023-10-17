@@ -32,9 +32,7 @@ const NavbarComponent = (props) => {
             </Button>
 
             <NavItem>
-              {/* <NavLink href="#" className="left">
-                <h4>Log Out</h4>
-              </NavLink> */}
+              <NavLink href='#' className='left'></NavLink>
             </NavItem>
           </Nav>
         </Collapse>

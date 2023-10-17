@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Countdown from 'react-countdown';
+import Accordion from '../accordion/accordion.js';
 
 const renderer = ({ days, hours, minutes }) => {
   return (
@@ -16,8 +17,9 @@ class DateCardComponent extends Component {
       id: this.props.id,
       date: this.props.date,
       description: this.props.description,
+      image: this.props.image,
       name: this.props.name,
-      isOpen: true,
+      isOpen: false,
       renderer: renderer,
       currentYear: new Date().getFullYear(),
     };
@@ -29,14 +31,11 @@ class DateCardComponent extends Component {
     return this.lightenColor(color, 35);
   }
 
-  //if the color created in getColor() is a dark color, make the text white in that card
-  getTextColor() {
-    let color = this.getColor();
-    if (color.substring(0, 2) > '80') {
-      return 'white';
-    } else {
-      return 'black';
-    }
+  //build a toggle function for the dropdown
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
   }
 
   lightenColor(color, percent) {
@@ -73,7 +72,14 @@ class DateCardComponent extends Component {
             />
           </div>
           <h3 className='card-title'>{this.state.name}!!!</h3>
-          <div className='card-text'>{this.state.description}</div>
+          <Accordion key='1'>
+            <p>{this.state.description}</p>
+            <img
+              style={{ maxWidth: '300px' }}
+              src={this.state.image}
+              alt={this.state.name}
+            ></img>
+          </Accordion>
         </div>
       </div>
     );

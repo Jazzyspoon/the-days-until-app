@@ -38,6 +38,7 @@ class MainPage extends React.Component {
                     date={holiday.date}
                     name={holiday.name}
                     description={holiday.description}
+                    image={holiday.image}
                   />
                 );
               })}
