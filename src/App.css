@@ -19,11 +19,11 @@
 }
 
 .paper {
-  display: 'flex';
-  justify-content: 'center';
+  display: flex;
+  justify-content: center;
   text-align: center;
   background-color: rgb(255, 255, 255);
-  border: '2px solid #000';
+  border: 2px solid #000;
   color: black;
   padding: 10px;
 }
@@ -37,16 +37,18 @@
   border-radius: 25px;
   padding: 10px;
   margin: 20px;
-
   background-color: rgb(200, 249, 255);
   box-shadow: 5px 5px 5px rgb(32, 32, 32);
 }
 
-.timegrid {
+.time-grid {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   box-sizing: border-box;
-  justify-content: center;
+  justify-content: space-between;
+  align-content: center;
+  align-items: flex-start;
 }
 
 .btn {
@@ -57,8 +59,7 @@
 .btn.btn-custom-sm,
 .btn.btn-custom-xs {
   border-radius: 50px;
-  border: black;
-  border-width: 1px;
+  border: 1px black;
   box-shadow: 5px 5px 5px rgb(32, 32, 32);
 }
 

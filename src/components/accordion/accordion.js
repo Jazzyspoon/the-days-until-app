@@ -2,11 +2,13 @@
 import { Component } from 'react';
 import React from 'react';
 
-class Accordion extends Component {
+class Modal extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
+      image: this.props.image,
+      name: this.props.name,
     };
   }
 
@@ -19,24 +21,19 @@ class Accordion extends Component {
   render() {
     return (
       <div className='accordion'>
-        <button
-          type='button'
-          className='btn btn-primary btn-sm btn-block'
-          onClick={() => this.toggle()}
-        >
-          more info
-        </button>
         {this.state.isOpen && (
-          <>
-            <div className='p-2'>{this.props.children}</div>
-            <div className='accordion__image'>
-              <img src={this.props.image} alt='' />
-            </div>
-          </>
+          <div className='accordion-content'>
+            <img
+              src={this.state.image}
+              alt={this.state.name}
+              className='card-img'
+            />
+            <p>{this.props.description}</p>
+          </div>
         )}
       </div>
     );
   }
 }
 
-export default Accordion;
+export default Modal;

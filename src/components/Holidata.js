@@ -23,7 +23,7 @@ const getNextChristmasDate = () => {
   return renderDate(XmasDate);
 };
 
-//get the next upcoming Presidents Day in the YYYY-MM-DD format
+//get the next upcoming President's Day in the YYYY-MM-DD format
 const getNextPresidentsDate = () => {
   let presDayDate = new Date(date.getFullYear(), 1, 15);
   if (presDayDate < date) {
@@ -73,15 +73,12 @@ const mLKDates = [
 ];
 const getCurrentUpcomingMLKDate = () => {
   for (let i = 0; i < mLKDates.length; i++) {
-    if (
-      mLKDates[i] > date && //if the date in the array is greater than today's date
-      mLKDates[i] < //and the date in the array is less than the next date in the array
-        mLKDates[i + 1]
-    ) {
-      const renderedDate = renderDate(mLKDates[i]);
-      return renderedDate;
+    if (mLKDates[i] > date) { //if the date in the array is greater than today's date
+      return renderDate(mLKDates[i]);
     }
   }
+  // If no date is found, return the last date in the array
+  return renderDate(mLKDates[mLKDates.length - 1]);
 };
 
 const easterDates = [
@@ -99,14 +96,12 @@ const easterDates = [
 
 const getNextEasterDate = () => {
   for (let i = 0; i < easterDates.length; i++) {
-    if (
-      easterDates[i] > date && //if the date in the array is greater than today's date
-      easterDates[i] < //and the date in the array is less than the next date in the array
-        easterDates[i + 1]
-    ) {
+    if (easterDates[i] > date) { //if the date in the array is greater than today's date
       return renderDate(easterDates[i]);
     }
   }
+  // If no date is found, return the last date in the array
+  return renderDate(easterDates[easterDates.length - 1]);
 };
 
 //get next fourth of July in the YYYY-MM-DD format
@@ -118,7 +113,7 @@ const getNextFourthOfJulyDate = () => {
   return renderDate(fourthOfJulyDate);
 };
 
-//get next new years eve in the YYYY-MM-DD format
+//get next new years' eve in the YYYY-MM-DD format
 const getNextNewYearsEveDate = () => {
   let newYearsEveDate = new Date(date.getFullYear(), 11, 31);
   if (newYearsEveDate < date) {
@@ -174,14 +169,12 @@ const goodFridayDates = [
 
 const getNextGoodFridayDate = () => {
   for (let i = 0; i < goodFridayDates.length; i++) {
-    if (
-      goodFridayDates[i] > date && //if the date in the array is greater than today's date
-      goodFridayDates[i] < //and the date in the array is less than the next date in the array
-        goodFridayDates[i + 1]
-    ) {
+    if (goodFridayDates[i] > date) { //if the date in the array is greater than today's date
       return renderDate(goodFridayDates[i]);
     }
   }
+  // If no date is found, return the last date in the array
+  return renderDate(goodFridayDates[goodFridayDates.length - 1]);
 };
 
 const getAprilFoolsDate = () => {
@@ -216,14 +209,12 @@ const inaugurationDates = [
 
 const getInaugurationDate = () => {
   for (let i = 0; i < inaugurationDates.length; i++) {
-    if (
-      inaugurationDates[i] > date && //if the date in the array is greater than today's date
-      inaugurationDates[i] < //and the date in the array is less than the next date in the array
-        inaugurationDates[i + 1]
-    ) {
+    if (inaugurationDates[i] > date) { //if the date in the array is greater than today's date
       return renderDate(inaugurationDates[i]);
     }
   }
+  // If no date is found, return the last date in the array
+  return renderDate(inaugurationDates[inaugurationDates.length - 1]);
 };
 
 const HoliData = [

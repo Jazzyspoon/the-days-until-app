@@ -11,13 +11,26 @@ class MainPage extends React.Component {
     super(props);
     this.state = {
       HoliData: HoliData,
-      isOpen: true,
-      id: this.props.id,
-      date: this.props.date,
-      name: this.props.name,
-      currentYear: new Date().getFullYear(),
+      isOpen: false,
     };
   }
+
+  toggle = (id) => {
+    return () => {
+      const HoliData = this.state.HoliData.map((holiday) => {
+        if (holiday.id === id) {
+          holiday.isOpen = !holiday.isOpen;
+        }
+        return holiday;
+      });
+      this.setState({ HoliData });
+    };
+  };
+
+  //reload the state of the cards
+  reloadCards = () => {
+    this.setState({ HoliData: HoliData });
+  };
 
   render() {
     return (
@@ -29,10 +42,11 @@ class MainPage extends React.Component {
               <h1>The Days Left Until...</h1>
             </header>
 
-            <div className='timegrid'>
+            <div className='time-grid'>
               {this.state.HoliData.map((holiday) => {
                 return (
                   <DateCardComponent
+                    onClick={this.toggle(holiday.id)}
                     key={holiday.id}
                     id={holiday.id}
                     date={holiday.date}
@@ -47,6 +61,7 @@ class MainPage extends React.Component {
           <InputField
             HoliData={this.state.HoliData}
             isOpen={this.state.isOpen}
+            reloadCards={this.reloadCards}
           ></InputField>
         </div>
       </BrowserRouter>

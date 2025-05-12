@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Countdown from 'react-countdown';
-import Accordion from '../accordion/accordion.js';
+import Modal from '../accordion/accordion';
 
 const renderer = ({ days, hours, minutes }) => {
   return (
@@ -17,7 +17,6 @@ class DateCardComponent extends Component {
       id: this.props.id,
       date: this.props.date,
       description: this.props.description,
-      image: this.props.image,
       name: this.props.name,
       isOpen: false,
       renderer: renderer,
@@ -25,7 +24,7 @@ class DateCardComponent extends Component {
     };
   }
 
-  //each card gets it's own unique light color
+  //each card gets its own unique light color
   getColor() {
     let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
     return this.lightenColor(color, 35);
@@ -39,7 +38,7 @@ class DateCardComponent extends Component {
   }
 
   lightenColor(color, percent) {
-    var num = parseInt(color.replace('#', ''), 16),
+    const num = parseInt(color.replace('#', ''), 16),
       amt = Math.round(2.55 * percent),
       R = (num >> 16) + amt,
       B = ((num >> 8) & 0x00ff) + amt,
@@ -72,17 +71,14 @@ class DateCardComponent extends Component {
             />
           </div>
           <h3 className='card-title'>{this.state.name}!!!</h3>
-          <Accordion key='1'>
-            <p>{this.state.description}</p>
-            <img
-              style={{ maxWidth: '300px' }}
-              src={this.state.image}
-              alt={this.state.name}
-            ></img>
-          </Accordion>
+          <Modal
+            description={this.state.description}
+            image={this.props.image}
+          ></Modal>
         </div>
       </div>
     );
   }
 }
+
 export default DateCardComponent;
