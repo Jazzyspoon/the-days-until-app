@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/the-days-until-app/static/css/main.69845b35.css",
-    "main.js": "/the-days-until-app/static/js/main.3f0a97f2.js",
-    "static/js/787.05343c0c.chunk.js": "/the-days-until-app/static/js/787.05343c0c.chunk.js",
+    "main.css": "/the-days-until-app/static/css/main.17dfbed3.css",
+    "main.js": "/the-days-until-app/static/js/main.8e0018ea.js",
+    "static/js/453.55928c04.chunk.js": "/the-days-until-app/static/js/453.55928c04.chunk.js",
     "index.html": "/the-days-until-app/index.html",
-    "main.69845b35.css.map": "/the-days-until-app/static/css/main.69845b35.css.map",
-    "main.3f0a97f2.js.map": "/the-days-until-app/static/js/main.3f0a97f2.js.map",
-    "787.05343c0c.chunk.js.map": "/the-days-until-app/static/js/787.05343c0c.chunk.js.map"
+    "main.17dfbed3.css.map": "/the-days-until-app/static/css/main.17dfbed3.css.map",
+    "main.8e0018ea.js.map": "/the-days-until-app/static/js/main.8e0018ea.js.map",
+    "453.55928c04.chunk.js.map": "/the-days-until-app/static/js/453.55928c04.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.69845b35.css",
-    "static/js/main.3f0a97f2.js"
+    "static/css/main.17dfbed3.css",
+    "static/js/main.8e0018ea.js"
   ]
 }
