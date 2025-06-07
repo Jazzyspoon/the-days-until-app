@@ -1,4 +1,5 @@
 .buttonBox {
+  position: relative;
   justify-content: center;
   text-align: center;
   border-style: groove;
@@ -8,4 +9,29 @@
   padding: 10px;
   margin: 20px;
   box-shadow: 5px 5px 5px rgb(32, 32, 32);
+}
+
+.delete-btn {
+  position: absolute !important;
+  top: 5px !important;
+  right: 5px !important;
+  background: #dc3545 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 25px !important;
+  height: 25px !important;
+  cursor: pointer !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10 !important;
+  line-height: 1 !important;
+}
+
+.delete-btn:hover {
+  background: #c82333 !important;
+  transform: scale(1.1) !important;
 }

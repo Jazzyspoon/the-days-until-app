@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Countdown from 'react-countdown';
 import Modal from '../accordion/accordion';
+import './date-card-component.css';
 
 const renderer = ({ days, hours, minutes }) => {
   return (
@@ -63,6 +64,20 @@ class DateCardComponent extends Component {
         style={{ backgroundColor: this.getColor() }}
         alt={this.state.name}
       >
+        {this.props.isCustom && this.props.onDelete && (
+          <button
+            className='delete-btn'
+            onClick={(e) => {
+              e.stopPropagation();
+              if (window.confirm(`Are you sure you want to delete "${this.state.name}"?`)) {
+                this.props.onDelete(this.state.id);
+              }
+            }}
+            title="Delete this holiday"
+          >
+            ×
+          </button>
+        )}
         <div className='card-body'>
           <div className='card-text'>
             <Countdown
@@ -71,6 +86,16 @@ class DateCardComponent extends Component {
             />
           </div>
           <h3 className='card-title'>{this.state.name}!!!</h3>
+          {this.props.isCustom && (
+            <div>
+              <small style={{ color: '#666', fontStyle: 'italic' }}>Custom Holiday</small>
+              {this.props.isYearlyRepeating && (
+                <div>
+                  <small style={{ color: '#28a745', fontStyle: 'italic' }}>🔄 Repeats Yearly</small>
+                </div>
+              )}
+            </div>
+          )}
           <Modal
             description={this.state.description}
             image={this.props.image}
