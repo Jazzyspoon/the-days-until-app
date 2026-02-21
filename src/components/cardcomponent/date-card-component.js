@@ -86,16 +86,24 @@ class DateCardComponent extends Component {
             />
           </div>
           <h3 className='card-title'>{this.state.name}!!!</h3>
-          {this.props.isCustom && (
-            <div>
-              <small style={{ color: '#666', fontStyle: 'italic' }}>Custom Holiday</small>
-              {this.props.isYearlyRepeating && (
-                <div>
-                  <small style={{ color: '#28a745', fontStyle: 'italic' }}>🔄 Repeats Yearly</small>
-                </div>
-              )}
-            </div>
-          )}
+          <div>
+            {this.props.isCustom && (
+              <small style={{ color: '#666', fontStyle: 'italic' }}>
+                Custom Holiday
+              </small>
+            )}
+            {this.props.isYearlyRepeating && (
+              <div>
+                <small style={{ color: '#28a745', fontStyle: 'italic' }}>
+                  🔄 Repeats Yearly on{' '}
+                  {new Date(this.state.date).toLocaleDateString(undefined, {
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </small>
+              </div>
+            )}
+          </div>
           <Modal
             description={this.state.description}
             image={this.props.image}
