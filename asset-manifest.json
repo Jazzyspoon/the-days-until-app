@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/the-days-until-app/static/css/main.e922a6b1.css",
-    "main.js": "/the-days-until-app/static/js/main.d227f189.js",
+    "main.css": "/the-days-until-app/static/css/main.d757730d.css",
+    "main.js": "/the-days-until-app/static/js/main.c3578857.js",
     "static/js/453.c6a35dde.chunk.js": "/the-days-until-app/static/js/453.c6a35dde.chunk.js",
     "index.html": "/the-days-until-app/index.html",
-    "main.e922a6b1.css.map": "/the-days-until-app/static/css/main.e922a6b1.css.map",
-    "main.d227f189.js.map": "/the-days-until-app/static/js/main.d227f189.js.map",
+    "main.d757730d.css.map": "/the-days-until-app/static/css/main.d757730d.css.map",
+    "main.c3578857.js.map": "/the-days-until-app/static/js/main.c3578857.js.map",
     "453.c6a35dde.chunk.js.map": "/the-days-until-app/static/js/453.c6a35dde.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e922a6b1.css",
-    "static/js/main.d227f189.js"
+    "static/css/main.d757730d.css",
+    "static/js/main.c3578857.js"
   ]
 }
