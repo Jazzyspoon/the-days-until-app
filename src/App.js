@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import NavbarComponent from './components/appheader/navbar.js';
 import InputField from './components/inputField/InputField.js';
 import HoliData from './components/Holidata';
 import DateCardComponent from './components/cardcomponent/date-card-component';
@@ -109,7 +108,6 @@ class MainPage extends React.Component {
 
     return (
       <BrowserRouter>
-        <NavbarComponent />
         <div className='App'>
           <main className='app--screen'>
           <header className='App-header text-center'>
