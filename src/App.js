@@ -109,12 +109,13 @@ class MainPage extends React.Component {
 
     return (
       <BrowserRouter>
-        <NavbarComponent></NavbarComponent>
+        <NavbarComponent />
         <div className='App'>
           <main className='app--screen'>
-            <header className='App-header'>
-              <h1>The Days Left Until...</h1>
-            </header>
+          <header className='App-header text-center'>
+            <h1>🎈 The Days Left Until... 🎂</h1>
+            <p className='lead mt-2' style={{ opacity: 0.9, fontWeight: 500 }}>Count down to your favorite holidays and events!</p>
+          </header>
 
             <div className='time-grid'>
               {allHolidays.map((holiday) => {

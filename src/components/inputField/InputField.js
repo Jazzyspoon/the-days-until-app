@@ -126,84 +126,93 @@ const InputField = (props) => {
   };
   return (
     <div className='fieldBox' id='inputfield'>
-      <h3>Add Custom Holiday</h3>
+      <h3 className='mb-4'>Add Custom Holiday</h3>
       {message && (
         <div
-          style={{
-            padding: '10px',
-            margin: '10px 0',
-            borderRadius: '5px',
-            backgroundColor: message.includes('success') ? '#d4edda' : '#f8d7da',
-            color: message.includes('success') ? '#155724' : '#721c24',
-            border: `1px solid ${message.includes('success') ? '#c3e6cb' : '#f5c6cb'}`
-          }}
+          className={`alert ${message.includes('success') ? 'alert-success' : 'alert-danger'}`}
+          role="alert"
         >
           {message}
         </div>
       )}
-      <Form onSubmit={handleSubmit}>
-        <Label for='name'>New Holiday Name</Label>
-        <Input
-          type='text'
-          name='name'
-          id='name'
-          placeholder='Name'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          disabled={isSubmitting}
-          required
-        />
-        <Label for='date'>Date</Label>
-        <Input
-          type='date'
-          name='date'
-          id='date'
-          placeholder='Date'
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          disabled={isSubmitting}
-          required
-        />
-        <Label for='description'>Description</Label>
-        <Input
-          type='textarea'
-          name='description'
-          id='description'
-          placeholder='Description'
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          disabled={isSubmitting}
-        />
-        <Label for='image'>Holiday Image (Optional)</Label>
-        <Input
-          type='file'
-          name='image'
-          id='image'
-          accept='image/*'
-          onChange={handleImageChange}
-          disabled={isSubmitting}
-        />
+      <Form onSubmit={handleSubmit} className='text-start'>
+        <div className='mb-3'>
+          <Label for='name' className='form-label'>New Holiday Name</Label>
+          <Input
+            className='form-control'
+            type='text'
+            name='name'
+            id='name'
+            placeholder='e.g., Summer Vacation'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            disabled={isSubmitting}
+            required
+          />
+        </div>
+        <div className='mb-3'>
+          <Label for='date' className='form-label'>Date</Label>
+          <Input
+            className='form-control'
+            type='date'
+            name='date'
+            id='date'
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            disabled={isSubmitting}
+            required
+          />
+        </div>
+        <div className='mb-3'>
+          <Label for='description' className='form-label'>Description</Label>
+          <Input
+            className='form-control'
+            type='textarea'
+            name='description'
+            id='description'
+            placeholder='Tell us more about this holiday...'
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            disabled={isSubmitting}
+            rows={3}
+          />
+        </div>
+        <div className='mb-3'>
+          <Label for='image' className='form-label'>Holiday Image (Optional)</Label>
+          <Input
+            className='form-control'
+            type='file'
+            name='image'
+            id='image'
+            accept='image/*'
+            onChange={handleImageChange}
+            disabled={isSubmitting}
+          />
+        </div>
         {imagePreview && (
-          <div style={{ margin: '10px 0', textAlign: 'center' }}>
+          <div className='mb-3 text-center'>
             <img
               src={imagePreview}
               alt="Preview"
               style={{
-                maxWidth: '200px',
-                maxHeight: '150px',
-                borderRadius: '5px',
-                border: '1px solid #ccc'
+                maxWidth: '100%',
+                maxHeight: '200px',
+                borderRadius: '8px',
+                border: '1px solid #dee2e6'
               }}
             />
-            <div>
-              <small style={{ color: '#666' }}>Image Preview</small>
+            <div className='mt-1'>
+              <small className='text-muted'>Image Preview</small>
             </div>
           </div>
         )}
-        <div style={{ fontSize: '12px', color: '#666', margin: '5px 0' }}>
-          Note: This holiday will repeat yearly on the same date.
+        <div className='mb-4'>
+          <small className='text-muted d-block'>
+            <i className="bi bi-info-circle me-1"></i>
+            Note: This holiday will repeat yearly on the same date.
+          </small>
         </div>
-        <Button type='submit' className='btn' disabled={isSubmitting}>
+        <Button color='primary' type='submit' className='btn-submit' disabled={isSubmitting}>
           {isSubmitting ? 'Adding...' : 'Add Holiday'}
         </Button>
       </Form>

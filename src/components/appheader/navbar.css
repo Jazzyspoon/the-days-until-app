@@ -1,21 +1,28 @@
-.spacemaker {
-  margin-right: 20px;
+.navbar {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
 }
-.addbutton {
-  background-color: rgb(196, 248, 255);
-  margin-top: 6px;
-  border-radius: 25px;
-  padding: 5px;
-  color: black;
+
+.navbar-brand h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--text-dark);
 }
-.btn.btn-custom-lg,
-.btn.btn-custom-sm,
-.btn.btn-custom-xs {
-  border-radius: 50px;
-}
-.addAday__link,
-.addAday__link:hover,
-.addAday__link:active {
+
+.addAday__link {
   text-decoration: none;
   color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addAday__link:hover {
+  color: white;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-dark) !important;
 }

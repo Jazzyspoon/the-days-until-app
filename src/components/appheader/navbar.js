@@ -28,22 +28,20 @@ class NavbarComponent extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar color='white' light expand='md'>
+      <div className='container'>
+        <Navbar color='transparent' light expand='md' className='navbar'>
           <NavbarBrand href='/'>
-            <h1>The Days Until App</h1>
+            <h1>The Days Until...</h1>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className='mr-auto spacemaker left'>
-              <Button className='btn btn-success btn-custom-lg'>
-                <a href='#inputfield' className='addAday__link'>
-                  Add a Holiday
-                </a>
-              </Button>
-
+            <Nav className='ms-auto align-items-center' navbar>
               <NavItem>
-                <NavLink href='#' className='left'></NavLink>
+                <Button color='success' className='btn-custom-lg'>
+                  <a href='#inputfield' className='addAday__link'>
+                    <span style={{ fontSize: '1.2rem' }}>+</span> Add a Holiday
+                  </a>
+                </Button>
               </NavItem>
             </Nav>
           </Collapse>

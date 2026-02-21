@@ -20,39 +20,32 @@ class Modal extends Component {
 
   render() {
     return (
-      <div className='accordion'>
+      <div className='accordion mt-auto pt-3'>
         <button
-          className='accordion-toggle btn btn-sm btn-info'
+          className={`btn btn-sm w-100 ${this.state.isOpen ? 'btn-outline-secondary' : 'btn-outline-primary'}`}
           onClick={() => this.toggle()}
         >
           {this.state.isOpen ? 'Hide Details' : 'Show Details'}
         </button>
         {this.state.isOpen && (
-          <div className='accordion-content'>
+          <div className='accordion-content mt-3 p-3 bg-light rounded shadow-sm'>
             {this.props.image && (
               <img
                 src={this.props.image}
                 alt={this.props.name}
-                className='card-img'
-                style={{ maxWidth: '100%', height: 'auto', marginBottom: '10px' }}
+                className='img-fluid rounded mb-3'
+                style={{ maxHeight: '200px', width: '100%', objectFit: 'cover' }}
               />
             )}
             {!this.props.image && (
               <div
-                style={{
-                  padding: '20px',
-                  backgroundColor: '#f8f9fa',
-                  border: '2px dashed #dee2e6',
-                  borderRadius: '5px',
-                  marginBottom: '10px',
-                  textAlign: 'center',
-                  color: '#6c757d'
-                }}
+                className='d-flex align-items-center justify-content-center bg-white border border-dashed rounded mb-3'
+                style={{ height: '100px', color: '#6c757d', borderStyle: 'dashed' }}
               >
                 No image available
               </div>
             )}
-            <p>{this.props.description || 'No description available.'}</p>
+            <p className='small mb-0 text-dark'>{this.props.description || 'No description available.'}</p>
           </div>
         )}
       </div>

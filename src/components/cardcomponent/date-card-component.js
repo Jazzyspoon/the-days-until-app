@@ -5,8 +5,8 @@ import './date-card-component.css';
 
 const renderer = ({ days, hours, minutes }) => {
   return (
-    <div className='timer container d-flex '>
-      Only {days} Days and {hours} Hours Until
+    <div className='timer'>
+      {days} Days and {hours} Hours
     </div>
   );
 };
@@ -27,8 +27,18 @@ class DateCardComponent extends Component {
 
   //each card gets its own unique light color
   getColor() {
-    let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
-    return this.lightenColor(color, 35);
+    // Brighter, more kid-friendly colors
+    const colors = [
+      '#FFADAD', // Pastel Red
+      '#FFD6A5', // Pastel Orange
+      '#FDFFB6', // Pastel Yellow
+      '#CAFFBF', // Pastel Green
+      '#9BF6FF', // Pastel Blue
+      '#A0C4FF', // Pastel Indigo
+      '#BDB2FF', // Pastel Purple
+      '#FFC6FF', // Pastel Pink
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
   }
 
   //build a toggle function for the dropdown
@@ -58,11 +68,12 @@ class DateCardComponent extends Component {
   }
 
   render() {
+    const cardColor = this.getColor();
     return (
       <div
         className='buttonBox'
-        style={{ backgroundColor: this.getColor() }}
         alt={this.state.name}
+        style={{ backgroundColor: cardColor }}
       >
         {this.props.isCustom && this.props.onDelete && (
           <button
@@ -85,19 +96,19 @@ class DateCardComponent extends Component {
               renderer={this.state.renderer}
             />
           </div>
-          <h3 className='card-title'>{this.state.name}!!!</h3>
-          <div>
+          <h3 className='card-title'>{this.state.name}</h3>
+          <div className='holiday-type'>
             {this.props.isCustom && (
-              <small style={{ color: '#666', fontStyle: 'italic' }}>
-                Custom Holiday
-              </small>
+              <span className='badge bg-white text-dark shadow-sm' style={{ fontWeight: 600, borderRadius: '20px' }}>
+                ⭐ Custom
+              </span>
             )}
             {this.props.isYearlyRepeating && (
-              <div>
-                <small style={{ color: '#28a745', fontStyle: 'italic' }}>
-                  🔄 Repeats Yearly on{' '}
+              <div style={{ marginTop: '0.25rem' }}>
+                <small style={{ color: 'rgba(0,0,0,0.6)', fontWeight: 700 }}>
+                  🔄 Repeats on{' '}
                   {new Date(this.state.date).toLocaleDateString(undefined, {
-                    month: 'long',
+                    month: 'short',
                     day: 'numeric',
                   })}
                 </small>
